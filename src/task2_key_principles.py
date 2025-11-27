@@ -11,10 +11,20 @@ def create_scatter_plot(data):
     Parameters:
     data (DataFrame): A DataFrame containing 'x' and 'y' columns.
     """
-    fig, _ = plt.subplots()
-    pass
+    fig, ax = plt.subplots()
+    
+    # Create scatter plot using Seaborn
+    sns.scatterplot(data=data, x='x', y='y', ax=ax)
+    
+    # Add gridlines for clarity
+    ax.grid(True, linestyle='--', alpha=0.7)
+    
+    # Add axis labels and title
+    ax.set_xlabel('X Variable')
+    ax.set_ylabel('Y Variable')
+    ax.set_title('Scatter Plot: Relationship Between X and Y')
+    
     return fig
-
 
 
 # Example data
